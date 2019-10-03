@@ -367,7 +367,7 @@ class Prosody(object):
             zcr = torch.tensor(zcr.astype(np.float32))
             zcr = zcr[:, :max_frames]
             # finally obtain energy
-            egy = librosa.feature.rmse(y=wav, frame_length=self.win,
+            egy = librosa.feature.rms(y=wav, frame_length=self.win,
                                        hop_length=self.hop,
                                        pad_mode='constant')
             egy = torch.tensor(egy.astype(np.float32))
